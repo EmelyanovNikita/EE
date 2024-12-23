@@ -22,8 +22,8 @@ static ssize_t read_proc(struct file *filp, char *buf, size_t count, loff_t *off
     if (copy_to_user(buf, msg, count))
     {
 		printk(KERN_ERR "copy_to_user\n");
-        return -EFAULT;
-	}
+        	return -EFAULT;
+    }
     if(count == 0)
         temp = len;
     return count;
@@ -33,8 +33,8 @@ static ssize_t write_proc(struct file *filp, const char *buf, size_t count, loff
     if (copy_from_user(msg, buf, count))
     {
 		printk(KERN_ERR "copy_from_user\n");
-        return -EFAULT;
-	}
+	    	return -EFAULT;
+    }
     len = count;
     temp = len;
     return count;
