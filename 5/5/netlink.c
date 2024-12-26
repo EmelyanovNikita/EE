@@ -28,7 +28,7 @@ static void echo_from_userspace_to_ker_buff_msg(struct sk_buff *skb)
     //получение PID отправителя
     pid = nlh->nlmsg_pid; /*pid of sending process */
     //Логирование полуенного сообщения
-    res_in = printk(KERN_INFO "Netlink received message: %s from user with PID: %d\n", (char *)nlmsg_data(nlh), pid);
+    res_in = printk(KERN_INFO "Netlink received message: --%s-- from user with PID: %d\n", (char *)nlmsg_data(nlh), pid);
     
     
 	//получение размера выходного сообщения
