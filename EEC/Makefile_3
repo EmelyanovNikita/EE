@@ -1,0 +1,9 @@
+FLAGS ?= -O2
+
+
+all: ./test.c activelist.o 
+	gcc  $(FLAGS) -I./ ./test.c activelist.o -o test.x
+	
+	
+activelist.o: ./activelist.c
+	gcc  $(FLAGS) -c -I./ ./activelist.c -o activelist.o
